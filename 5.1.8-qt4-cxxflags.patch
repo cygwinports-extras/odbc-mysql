@@ -1,0 +1,11 @@
+--- origsrc/mysql-connector-odbc-5.1.8/qt.m4	2010-10-28 13:33:18.000000000 -0500
++++ src/mysql-connector-odbc-5.1.8/qt.m4	2011-01-23 21:04:23.992913100 -0600
+@@ -91,7 +91,7 @@ AC_DEFUN([FUN_CHECK_QT],
+   AC_SUBST(QTVERSION)
+   AC_SUBST(MOC)
+   AC_SUBST(UIC)
+-  QT_CXXFLAGS="-I$qt_includes"
++  QT_CXXFLAGS="-I$qt_includes/Qt -I$qt_includes"
+   AC_SUBST(QT_CXXFLAGS)
+   QT_LDFLAGS="-L$qt_libraries"
+   AC_SUBST(QT_LDFLAGS)
