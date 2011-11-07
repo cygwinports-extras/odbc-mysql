@@ -20,17 +20,6 @@
  
  bin_PROGRAMS = myodbc-installer
  myodbc_installer_SOURCES = myodbc3i.c
---- origsrc/mysql-connector-odbc-5.1.8/setup/Makefile.am	2010-10-28 13:33:18.000000000 -0500
-+++ src/mysql-connector-odbc-5.1.8/setup/Makefile.am	2011-01-23 21:24:43.414637600 -0600
-@@ -113,7 +113,7 @@ mMYODBCSetupLineEdit.cpp: @srcdir@/MYODB
- #                                                                 #
- ###################################################################
- 
--INCLUDES = -I$(top_srcdir) $(QT_CXXFLAGS) -DSYSTEM_FILE_PATH=\"$(sysconfdir)\" -DDEFLIB_PATH=\"$(libdir)\" $(LTDLINCL)
-+INCLUDES = -I$(top_builddir) -I$(top_srcdir) $(QT_CXXFLAGS) -DSYSTEM_FILE_PATH=\"$(sysconfdir)\" -DDEFLIB_PATH=\"$(libdir)\" $(LTDLINCL)
- 
- libmyodbc3S_la_LDFLAGS = \
- 	-export-dynamic \
 --- origsrc/mysql-connector-odbc-5.1.8/util/Makefile.am	2010-10-28 13:33:17.000000000 -0500
 +++ src/mysql-connector-odbc-5.1.8/util/Makefile.am	2011-01-23 20:39:48.687137300 -0600
 @@ -1,4 +1,4 @@

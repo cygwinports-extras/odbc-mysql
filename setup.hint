@@ -1,5 +1,5 @@
 category: Database
-requires: libgcc1 libiodbc2 libltdl7 libmysqlclient16 libQtCore4 libQtGui4 libstdc++6
+requires: libiodbc2 libmysqlclient16
 sdesc: "ODBC MySQL driver"
 ldesc: "Open Database Connectivity (ODBC) is a widely accepted standard 
 for reading/writing data. MySQL Connector/ODBC is a driver for the ODBC 

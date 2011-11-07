@@ -9,19 +9,3 @@
  
  if WITH_DEBUG
  LTLIBS_DEPS = $(LTLIBS_DEBUG_DEPS)
---- origsrc/mysql-connector-odbc-5.1.8/setup/Makefile.am	2010-10-28 13:33:18.000000000 -0500
-+++ src/mysql-connector-odbc-5.1.8/setup/Makefile.am	2011-01-23 21:24:43.414637600 -0600
-@@ -118,10 +118,11 @@ mMYODBCSetupLineEdit.cpp: @srcdir@/MYODB
- libmyodbc3S_la_LDFLAGS = \
- 	-export-dynamic \
- 	-export-symbols @srcdir@/myodbc3S.export \
--	-release @NUMERIC_VERSION@ \
-+	-avoid-version \
-+	-no-undefined \
- 	-module
- 
--libmyodbc3S_la_LIBADD = $(QT_LDFLAGS) $(QT_LIBS) $(EXTRA_XLIBS) \
-+libmyodbc3S_la_LIBADD = $(QT_LDFLAGS) $(QT_LIBS) $(EXTRA_XLIBS) $(ODBC_DM_LIB) \
- 			../util/libmyodbc3u.la
- 
- libmyodbc3S_la_DEPENDENCIES = ../util/libmyodbc3u.la

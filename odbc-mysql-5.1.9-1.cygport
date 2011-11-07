@@ -1,5 +1,4 @@
 ORIG_PN="mysql-connector-odbc"
-inherit qt4
 
 DESCRIPTION="ODBC MySQL driver"
 HOMEPAGE="http://www.mysql.com/downloads/connector/odbc/"
@@ -7,12 +6,8 @@ SRC_URI="http://mysql.mirrors.hoobly.com/Downloads/Connector-ODBC/${PV[1]}.${PV[
 
 PATCH_URI="
 	5.1.8-ldflags.patch
-	5.1.8-qt4-cxxflags.patch
 	5.1.8-vpath.patch
 "
 
-CYGCONF_ARGS="
-	--with-qt-includes=${QT4_INCLUDEDIR}
-	--with-qt-libraries=${QT4_LIBDIR}
-	--with-qt-programs=${QT4_BINDIR}
-"
+MAKEOPTS+=" readme_DATA= "
+DOCS="README.debug"
