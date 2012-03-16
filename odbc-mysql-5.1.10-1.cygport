@@ -1,8 +1,7 @@
-ORIG_PN="mysql-connector-odbc"
-
 DESCRIPTION="ODBC MySQL driver"
 HOMEPAGE="http://www.mysql.com/downloads/connector/odbc/"
-SRC_URI="http://mysql.mirrors.hoobly.com/Downloads/Connector-ODBC/${PV[1]}.${PV[2]}/${ORIG_PN}-${PV}.tar.gz"
+SRC_URI="http://mysql.mirrors.hoobly.com/Downloads/Connector-ODBC/${PV[1]}.${PV[2]}/mysql-connector-odbc-${PV}-src.tar.gz"
+SRC_DIR="mysql-connector-odbc-${PV}-src"
 
 PATCH_URI="
 	5.1.8-ldflags.patch
@@ -11,3 +10,5 @@ PATCH_URI="
 
 MAKEOPTS+=" readme_DATA= "
 DOCS="README.debug"
+
+KEEP_LA_FILES="none"
