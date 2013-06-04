@@ -1,0 +1,26 @@
+inherit cmake
+
+NAME="odbc-mysql"
+VERSION=5.2.5
+RELEASE=1
+CATEGORY="Database"
+SUMMARY="ODBC MySQL driver"
+DESCRIPTION="Open Database Connectivity (ODBC) is a widely accepted standard
+for reading/writing data. MySQL Connector/ODBC is a driver for the ODBC system
+which allows applications to communicate with the MySQL server using the ODBC
+standard."
+HOMEPAGE="http://www.mysql.com/downloads/connector/odbc/"
+SRC_URI="http://mysql.mirrors.hoobly.com/Downloads/Connector-ODBC/${VERSION%.*}/mysql-connector-odbc-${VERSION}-src.tar.gz"
+SRC_DIR="mysql-connector-odbc-${VERSION}-src"
+PATCH_URI="5.2.5-cygwin.patch"
+
+DIFF_EXCLUDES="VersionInfo.h postflight"
+
+src_install() {
+	cd ${B}
+	# make install puts docs into /usr/ and installs tests
+	dobin bin/myodbc-installer.exe
+	dolib lib/cygmyodbc5w.dll
+}
+
+#DOCS="README.debug"
